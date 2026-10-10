@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='zizai-static-v1';
+const CACHE='zizai-static-v2';
 const FILES=['./index.html','./manifest.webmanifest','./icon-180.png','./icon-192.png','./icon-512.png','./icon-maskable.png'];
 const urls=FILES.map(p=>new URL(p,self.registration.scope).href);
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(urls)).then(()=>self.skipWaiting()));});
